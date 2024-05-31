@@ -3,8 +3,9 @@ import { Text, View, StyleSheet } from 'react-native';
 import { GoogleGenerativeAI } from '@google/generative-ai';
 import { useRoute } from '@react-navigation/native'; // Importando useRoute
 
-// Replace with your API key
-const API_KEY = 'AIzaSyCVpO7XsR0XrKkhZgKdFq3tgRhl0DHqwhA'; 
+// Importa as variavel de ambiente que foram configuradas no path do babelConfig.config.js como módulo
+import { API_KEY } from '@env';
+
 
 export default function ResultsPage (props) {
   const route = useRoute(); // Acessando o objeto route
@@ -12,9 +13,11 @@ export default function ResultsPage (props) {
   const { tema } = route.params;
   const { tresFilmes } = route.params;
   const [response, setResponse] = useState('');
-
+  
   useEffect(() => {
     const run = async () => {
+      // Carrega a variavel de ambiente que é a API KEY
+      const API_KEY = process.env.API_KEY; 
       const genAI = new GoogleGenerativeAI(API_KEY);
       const model = genAI.getGenerativeModel({ model: 'gemini-pro' });
       const prompt = `Me indique um filme do genêro ${genero}, que contenha esse ${tema} em sua sinopse. Três filmes que gostei desse genero foram: ${tresFilmes}Me indique somente filmes que existam no seu banco de dados. Me indique três filmes. Dê a sinopse de cada um deles`;

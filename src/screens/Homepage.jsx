@@ -9,7 +9,7 @@ export default function Homepage(props) {
                 <Button
                     style={styles.btn}
                     title='Começar!'
-                    onPress={() => props.navigation.navigate("Questions1")}
+                    onPress={() => props.navigation.navigate("QuestionsPage")}
                     color={'green'}
                 />
             </View>
