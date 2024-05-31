@@ -13,7 +13,7 @@ npx expo start --clear
 ~~~
 
 ## Bibliotecas instaladas:
-~~~
+~~~ bash
 // Instalação de bibliotecas de navegação
 npm install @react-navigation/native @react-navigation/native-stack 
 npx expo install react-native-screens react-native-safe-area-context
@@ -25,12 +25,12 @@ npm install react-native-dotenv
 
 ### Configuração das variaveis de ambiente:
 Primeiro, criar o arquivo .env
-~~~
+~~~ .env
 API_KEY = "ID_DA_API"
 ~~~
 
 Adicionar no arquivo babel.config.js, as linhas abaixo, logo após presets
-~~~
+~~~ javascript
 plugins: [
       [
         'module:react-native-dotenv', {
@@ -46,7 +46,7 @@ plugins: [
 ~~~
 
 Para utilizar a API_KEY
-~~~
+~~~ javascript
 import { API_KEY } from '@env';
 const API_KEY = process.env.API_KEY;
 ~~~
