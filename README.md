@@ -14,12 +14,12 @@ npx expo start --clear
 
 ## Bibliotecas instaladas:
 ~~~ bash
-// Instalação de bibliotecas de navegação
+# Instalação de bibliotecas de navegação
 npm install @react-navigation/native @react-navigation/native-stack 
 npx expo install react-native-screens react-native-safe-area-context
-// Instalação do Google Generative AI
+# Instalação do Google Generative AI
 npm install @google/generative-ai
-// Instalação do dotenv
+# Instalação do dotenv
 npm install react-native-dotenv
 ~~~
 
