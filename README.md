@@ -25,6 +25,8 @@ npm install react-native-dotenv
 
 ### Configuração da API Google AI Generative
 ~~~ javascript
+const [response, setResponse] = useState('');
+
 useEffect(() => {
     const run = async () => {
       try {
