@@ -23,6 +23,29 @@ npm install @google/generative-ai
 npm install react-native-dotenv
 ~~~
 
+### Configuração da API Google AI Generative
+~~~ javascript
+useEffect(() => {
+    const run = async () => {
+      try {
+        const API_KEY = process.env.API_KEY; 
+        const genAI = new GoogleGenerativeAI(API_KEY);
+        const model = genAI.getGenerativeModel({ model: 'gemini-pro' });
+        const prompt = `inserir-prompr-que-deseja-utilizar`;
+
+        const result = await model.generateContent(prompt);
+        const responseText = await result.response.text();
+        setResponse(formattedResponse);
+      } catch (error) {
+        console.error('Erro ao gerar resposta:', error); 
+      }
+    };
+
+    run();
+  }, []);
+
+~~~
+
 ### Configuração das variaveis de ambiente:
 Primeiro, criar o arquivo .env
 ~~~ .env
